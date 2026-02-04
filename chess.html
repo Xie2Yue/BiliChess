@@ -23,13 +23,19 @@
 
             padding: 10px;
 
-            background-color: #0000ff77;
+            background-color: #00f7;
             color: #fff;
         }
         #top-panel div {
             position: absolute;
             transform: translate(-50%, -50%);
             top: 50%;
+        }
+        #turn-box {
+            left: 50%;
+            padding: 10px;
+            border-radius: 10px;
+            position: absolute;
         }
 
         #main-panel {
@@ -108,11 +114,21 @@
             position: absolute;
             pointer-events: none;
         }
+        .tile div {
+            left: 50%;
+            top: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
         .tile-w {
             background-color: #f0d9b5;
         }
         .tile-b {
             background-color: #b58863;
+        }
+        .tile-selected {
+            outline: 3px solid #ff0;
+            outline-offset: -3px;
         }
 
         .chess {
@@ -125,6 +141,7 @@
 </head>
 <body>
     <div id = "top-panel">
+        <div id = "turn-box"></div>
     </div>
     <div id = "main-panel">
         <div id = "info-panel">
@@ -137,10 +154,13 @@
         </div>
         <div id = "cmd-panel">
             <button class = 'panel-box' onclick = "resetBoards()">重置棋盘</button>
+            <button class = 'panel-box' onclick = "resetCamera()">重置视角</button>
+            <button class = 'panel-box' onclick = "switchTurn() ">切换回合</button>
         </div>
     </div>
     <script src = 'basic.js'></script>
     <script src = "board.js"></script>
+    <script src = "game.js"></script>
     <script src = "main.js"></script>
 </body>
 </html>

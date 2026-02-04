@@ -41,8 +41,9 @@ class Board {
         let chess = {
             x, y, type, color,
             tagList: [
-                type + '-moving'
-            ]
+                type
+            ],
+            hasMoved: false
         }
 
         let ele = document.createElement('div');
@@ -74,31 +75,8 @@ class Board {
                 this.createTile(i, j);
             }
         }
-        for(let i = 0; i < 8; i ++) {
-            this.createChess(i, 6, 'pawn', 'b');
-        }
-        for(let i = 0; i < 8; i ++) {
-            this.createChess(i, 1, 'pawn', 'w');
-        }
-        [
-            {x: 0, y: 7, type: 'rook', color: 'b'},
-            {x: 1, y: 7, type: 'knight', color: 'b'},
-            {x: 2, y: 7, type: 'bishop', color: 'b'},
-            {x: 3, y: 7, type: 'queen', color: 'b'},
-            {x: 4, y: 7, type: 'king', color: 'b'},
-            {x: 5, y: 7, type: 'bishop', color: 'b'},
-            {x: 6, y: 7, type: 'knight', color: 'b'},
-            {x: 7, y: 7, type: 'rook', color: 'b'},
-            {x: 0, y: 0, type: 'rook', color: 'w'},
-            {x: 1, y: 0, type: 'knight', color: 'w'},
-            {x: 2, y: 0, type: 'bishop', color: 'w'},
-            {x: 3, y: 0, type: 'queen', color: 'w'},
-            {x: 4, y: 0, type: 'king', color: 'w'},
-            {x: 5, y: 0, type: 'bishop', color: 'w'},
-            {x: 6, y: 0, type: 'knight', color: 'w'},
-            {x: 7, y: 0, type: 'rook', color: 'w'}
-        ].forEach( ({x, y, type, color}) => {
+        ChessList.forEach( ({x, y, type, color}) => {
             this.createChess(x, y, type, color);
-        })
+        });
     }
 }

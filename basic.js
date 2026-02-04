@@ -6,6 +6,7 @@ const ChessName = {
     'knight' : '马',
     'pawn' : '兵',
 }
+
 const ChessSvg = {
     'king_w' : `
         <svg width="100%" height="100%" viewBox="0 0 32 32">
@@ -203,3 +204,43 @@ function getChessSvg(type, color) {
         `
     );
 }
+
+const ChessList = [
+    {x: 0, y: 6, type: 'pawn', color: 'b'},
+    {x: 1, y: 6, type: 'pawn', color: 'b'},
+    {x: 2, y: 6, type: 'pawn', color: 'b'},
+    {x: 3, y: 6, type: 'pawn', color: 'b'},
+    {x: 4, y: 6, type: 'pawn', color: 'b'},
+    {x: 5, y: 6, type: 'pawn', color: 'b'},
+    {x: 6, y: 6, type: 'pawn', color: 'b'},
+    {x: 7, y: 6, type: 'pawn', color: 'b'},
+    {x: 0, y: 1, type: 'pawn', color: 'w'},
+    {x: 1, y: 1, type: 'pawn', color: 'w'},
+    {x: 2, y: 1, type: 'pawn', color: 'w'},
+    {x: 3, y: 1, type: 'pawn', color: 'w'},
+    {x: 4, y: 1, type: 'pawn', color: 'w'},
+    {x: 5, y: 1, type: 'pawn', color: 'w'},
+    {x: 6, y: 1, type: 'pawn', color: 'w'},
+    {x: 7, y: 1, type: 'pawn', color: 'w'},
+
+    {x: 0, y: 7, type: 'rook', color: 'b'},
+    {x: 1, y: 7, type: 'knight', color: 'b'},
+    {x: 2, y: 7, type: 'bishop', color: 'b'},
+    {x: 3, y: 7, type: 'queen', color: 'b'},
+    {x: 4, y: 7, type: 'king', color: 'b'},
+    {x: 5, y: 7, type: 'bishop', color: 'b'},
+    {x: 6, y: 7, type: 'knight', color: 'b'},
+    {x: 7, y: 7, type: 'rook', color: 'b'},
+    {x: 0, y: 0, type: 'rook', color: 'w'},
+    {x: 1, y: 0, type: 'knight', color: 'w'},
+    {x: 2, y: 0, type: 'bishop', color: 'w'},
+    {x: 3, y: 0, type: 'queen', color: 'w'},
+    {x: 4, y: 0, type: 'king', color: 'w'},
+    {x: 5, y: 0, type: 'bishop', color: 'w'},
+    {x: 6, y: 0, type: 'knight', color: 'w'},
+    {x: 7, y: 0, type: 'rook', color: 'w'}
+];
+
+const MovableTile = '<div style = "width: 12px; height: 12px; border-radius: 50%; background-color: #777"></div>';
+const AttackableTile = '<div style = "width: 34px; height: 34px; border-radius: 50%; background: none; border: 3px solid #f007"></div>';
+const ChangableTile = '<div style = "width: 34px; height: 34px; border-radius: 50%; background: none; border: 3px solid #0ff7"></div>';
